@@ -9,7 +9,7 @@ export PATH=$PATH:/home/benabhi/.local/bin
 Ejecutar el siguiente comando instala, incicializa y clona el repo.
 
 ```
-sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply benabh
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply benabhi
 ```
 
 tada!
