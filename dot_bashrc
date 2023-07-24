@@ -124,6 +124,10 @@ export PATH=$PATH:/home/benabhi/.local/bin
 export EDITOR=/usr/bin/hx
 
 # Configs
+
+## Starship
+eval "$(starship init bash)"
+
 ## Cargo
 . "$HOME/.cargo/env"
 
