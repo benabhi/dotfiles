@@ -144,9 +144,25 @@ alias bat=/usr/bin/batcat
 
 # Funciones
 
+## Abre la session de Zellij `work`, la crea si no existe.
 z() {
-	# Abre la session de Zellij `work`, la crea si no existe.
 	/home/benabhi/.cargo/bin/zellij a work
 	[ $? -eq 1 ] && /home/benabhi/.cargo/bin/zellij -s work
 }
 
+## Crea una copia de un archivo con la finalizacion .$timestamp.bak
+bak() {
+  if [ $# -ne 1 ]; then
+    return 1
+  fi
+
+  if [ ! -f "$1" ]; then
+    return 1
+  fi
+
+  local timestamp=$(date +%Y%m%d%H%M%S)
+  local filename="${1##*/}"
+  local dirname=$(dirname "$1")
+
+  cp "$1" "$dirname/${filename}.${timestamp}.bak"
+}
