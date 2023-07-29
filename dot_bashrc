@@ -162,7 +162,7 @@ bak() {
 
   local timestamp=$(date +%Y%m%d%H%M%S)
   local filename="${1##*/}"
-  local dirname=$(dirname "$1")
+  local origin_dir=$(dirname "$(readlink -f "$1")")
 
-  cp "$1" "$dirname/${filename}.${timestamp}.bak"
+  cp "$1" "$origin_dir/${filename}.${timestamp}.bak"
 }
